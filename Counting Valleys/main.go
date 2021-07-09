@@ -6,6 +6,7 @@ import (
 )
 
 func main() {
+	fmt.Println("Counting Valleys")
 	fmt.Println(CountingValleys(12, "DDUUDDUDUUUD"))
 }
 
