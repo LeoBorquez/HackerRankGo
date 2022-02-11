@@ -6,7 +6,23 @@ import (
 	"runtime"
 )
 
+// struct is a collection of fields
+type Vertex struct {
+	X int
+	Y int
+}
+
+// An Interface type is defined as a set of method signatures
+type Abser interface {
+	Abs() float64
+}
+
 func main() {
+
+	v := Vertex{1, 2}
+	v.X = 4
+	fmt.Println(v)
+
 	// var declaration
 	var msg string
 	msg = "Hello" // msg:= "Hello" shortcut
@@ -15,7 +31,7 @@ func main() {
 
 	const pi = 1.618 // constant declaration
 
-	// var numbers [5]int
+	// Array var numbers [5]int
 	numbers := [...]int{0, 0, 0, 0, 0} // arrays have a fixed size
 
 	slice := []int{2, 3, 4} // slices have a DYNAMIC SIZE, unlike arrays
@@ -31,6 +47,16 @@ func main() {
 	names[0] = "John"
 	names[1] = "Jane"
 	fmt.Println(names)
+
+	//defer
+	defer fmt.Println("world") // defer the execution until the surrounding functions returns
+	fmt.Println("hello")
+}
+
+// Go does not have classes. However, you can define methods on types.
+func (v Vertex) Abs() float64 {
+	//A method is a function with a special receiver argument. (vertex is a receiver)
+	return math.Sqrt(float64(v.X)*float64(v.X) + float64(v.Y)*float64(v.Y))
 }
 
 // Pointers point to a memory location of a variable.
