@@ -1,7 +1,17 @@
 package main
 
-import "fmt"
+import (
+	"strings"
+)
 
 func main() {
-	fmt.Println("testing 2")
+	Solution("awsaws")
+}
+
+func Solution(s string) {
+	split := strings.Split(s, "")
+	len := len(split)
+	for _, val := range split {
+		
+	}
 }
